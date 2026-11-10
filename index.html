@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCTAGON // MMA Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <canvas id="scene"></canvas>
+    <div class="scanlines"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◈</span><div><strong>OCTAGON</strong><small>CHAMPIONSHIP SERIES</small></div></div>
+      <div class="event"><span class="live-dot"></span> LIVE EVENT <b>LAS VEGAS // 07</b></div>
+      <button class="sound" id="soundBtn">SOUND ON</button>
+    </header>
+    <section class="hud">
+      <div class="fighter-card left-card"><div class="flag">🇮🇪</div><div><span class="division">WELTERWEIGHT</span><h2 id="playerName">CONOR MCGREGOR</h2><div class="meter"><i id="playerHealth"></i></div><div class="stats"><span>HEALTH <b id="playerHealthText">100</b></span><span>STAMINA <b id="playerStaminaText">100</b></span></div></div></div>
+      <div class="round"><small>ROUND</small><strong id="roundNo">1</strong><span id="timer">03:00</span></div>
+      <div class="fighter-card right-card"><div><span class="division">HEAVYWEIGHT</span><h2 id="cpuName">JON JONES</h2><div class="meter enemy"><i id="cpuHealth"></i></div><div class="stats"><span>HEALTH <b id="cpuHealthText">100</b></span><span>STAMINA <b id="cpuStaminaText">100</b></span></div></div><div class="flag">🇺🇸</div></div>
+    </section>
+    <div id="fightCallout">FIGHT!</div>
+    <aside class="left-panel panel"><div class="panel-kicker">FIGHT CAMP / ROSTER</div><h1>CHOOSE<br><em>YOUR FIGHTER</em></h1><p class="panel-copy">Select your legend. Every fighter brings a different reach, power, and pace to the cage.</p><div id="roster" class="roster"></div></aside>
+    <aside class="right-panel panel"><div class="panel-kicker">MATCH FEED</div><div id="feed" class="feed"><p><b>01:00</b> WALKOUTS COMPLETE</p><p><b>00:00</b> THE BELL RINGS</p></div><div class="controls"><div class="panel-kicker">CONTROLS</div><div class="control-row"><kbd>W A S D</kbd><span>MOVE / STRAFE</span></div><div class="control-row"><kbd>J</kbd><span>JAB</span><kbd>K</kbd><span>HEAVY</span></div><div class="control-row"><kbd>SPACE</kbd><span>BLOCK</span></div></div></aside>
+    <div class="bottom-ui"><div class="tip">TIP // Manage stamina. Land heavy strikes after your opponent misses.</div><div class="buttons"><button data-action="jab">JAB <kbd>J</kbd></button><button data-action="heavy">HEAVY <kbd>K</kbd></button><button data-action="block">BLOCK <kbd>SPACE</kbd></button></div></div>
+    <div id="startOverlay" class="overlay"><div class="overlay-inner"><div class="eyebrow">WELCOME TO THE CAGE</div><h1>OCTAGON<br><span>CHAMPIONSHIP</span></h1><p>3D MMA FIGHTING // ONE NIGHT. ONE CAGE. ONE CHAMPION.</p><button id="startBtn" class="primary">ENTER THE ARENA <span>→</span></button><div class="overlay-meta"><span>BEST OF 3 ROUNDS</span><span>•</span><span>LIVE SIMULATION</span></div></div></div>
+    <div id="resultOverlay" class="overlay hidden"><div class="overlay-inner"><div class="eyebrow">MATCH COMPLETE</div><h1 id="resultTitle">VICTORY</h1><p id="resultCopy">THE OCTAGON HAS A NEW CHAMPION.</p><button id="rematchBtn" class="primary">FIGHT AGAIN <span>↻</span></button></div></div>
+  </div>
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
